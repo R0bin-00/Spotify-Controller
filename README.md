@@ -4,18 +4,6 @@ A compact Windows desktop app for controlling Spotify with global hotkeys, a cle
 
 > **Windows only.** The app uses Windows APIs (media keys, media session, `winsound`), so it does not run on macOS or Linux.
 
-<p align="center">
-  <img width="48%" alt="Screenshot 1" src="https://github.com/user-attachments/assets/75cd01fb-d946-42fd-9a86-483a871d0d39" />
-  <img width="48%" alt="Screenshot 2" src="https://github.com/user-attachments/assets/1d43b1a7-5f50-4005-a8c8-17b0d2a8bca7" />
-</p>
-<p align="center">
-  <img width="48%" alt="Screenshot 3" src="https://github.com/user-attachments/assets/bbbeba8a-16e1-4a11-a8c2-fa7d83c07a2f" />
-  <img width="48%" alt="Screenshot 4" src="https://github.com/user-attachments/assets/1eebee70-4405-4a3a-a089-0c7098d5cd30" />
-</p>
-<p align="center">
-  <img width="358" alt="Screenshot 5" src="https://github.com/user-attachments/assets/5361c521-18d1-437a-8079-c13349caf8d0" />
-</p>
-
 ## Features
 
 - **Global hotkeys** for Play/Pause, Next and Previous, freely configurable, work even when the window is hidden
