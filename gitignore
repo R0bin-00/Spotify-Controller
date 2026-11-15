@@ -1,8 +1,11 @@
-# Private user data (contains Spotify credentials!)
+# Private user data (contains Spotify and Twitch credentials!)
 settings.json
 hotkeys.json
+controller.json
 history.json
 cover_cache/
+wallpaper_*.jpg
+*.log
 .write_test
 
 # Python
