@@ -5,5 +5,9 @@ Pillow
 # Optional: cover art + playback state from the Windows media session
 winsdk
 
-# Optional: Discord Rich Presence
-pypresence
+# Optional: Spotify-only volume control
+pycaw
+comtypes
+
+# Optional: Xbox / PS4 / PS5 controller hotkeys
+pygame
