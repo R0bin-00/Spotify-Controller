@@ -1,4 +1,4 @@
 {
-    "version": "3.2",
-    "notes": "Twitch chat bot (!song, !songrequest), request list + OBS overlay, add-to-playlist hotkey, YouTube link in About"
+    "version": "3.3",
+    "notes": "One-click auto-update, new icons and animations, better background tint picker"
 }
