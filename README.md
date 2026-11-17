@@ -25,7 +25,7 @@ A compact Windows desktop app for controlling Spotify with global hotkeys, a cle
 Some antivirus programs may flag `SpotifyController.exe` as a trojan (for example "Wacatac" or "Trojan.Python.Agent"). This is a **false positive**. It is a known issue with unsigned apps written in Python and packaged with PyInstaller, and with apps that use global hotkeys.
 
 - The app does not download or run other programs and collects no personal data. It only connects to Spotify, Twitch (if you enable the chat bot), cover art services and GitHub (version check).
-- You can check the file yourself on [VirusTotal](https://www.virustotal.com/gui/file/8666f1a3dc7e35113f196b5a787b41ec56321b6baffdc2ea9b5a9c6e45f5ee82). SHA256 hash: `8666f1a3dc7c35113f196b5a787b41ec56321b6baffdc2ea9b5a9c6e45f5ee82`
+- You can check the file yourself on [VirusTotal]([https://www.virustotal.com/gui/file/8666f1a3dc7e35113f196b5a787b41ec56321b6baffdc2ea9b5a9c6e45f5ee82](https://www.virustotal.com/gui/file/ebe841c7fc671f556b5d1eda96e8545926fd56ce6f63523ba7db8265ccf63dc6?nocache=1)). SHA256 hash: `ebe841c7fc671f556b5d1eda96e8545926fd56ce6f63523ba7db8265ccf63dc6`
 - To verify your download, run `Get-FileHash .\SpotifyController.exe -Algorithm SHA256` in PowerShell and compare the result with the hash above.
 - If your antivirus blocks it, add `SpotifyController.exe` to its exclusions list.
 - I have reported the file to the antivirus vendors as a false positive.
