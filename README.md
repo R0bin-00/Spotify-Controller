@@ -1,31 +1,35 @@
 # Spotify Controller
 
-A compact Windows desktop app for controlling Spotify with global hotkeys, a clean "now playing" view, a system tray icon, a Twitch chat bot with song requests and OBS stream overlays.
+A compact Windows desktop app for controlling Spotify with global hotkeys, a clean "now playing" view with synced lyrics, a system tray icon, a Twitch chat bot with song requests and OBS stream overlays.
 
 > **Windows only.** The app uses Windows APIs (media keys, media session, `winsound`), so it does not run on macOS or Linux.
 
 ## Features
 
 - **Global hotkeys** for Play/Pause, Next and Previous, freely configurable, work even when the window is hidden
-- **Controller hotkeys**: skip, pause and like songs with your Xbox, PS4 or PS5 controller, including button combos (e.g. `LB + A`)
+- **Controller hotkeys**: skip, pause and like songs with your Xbox, PS4 or PS5 controller, including button combos (e.g. `LB + A`). Switch and other controllers work with the optional extended mode (SDL) in **Settings → General**
 - **Like hotkey**: save the current song to your Spotify library with one key press (optional sound feedback)
 - **Add to playlist**: pick a playlist in Settings → Spotify and add the playing song with one hotkey
 - **Clear hotkey**: assign your own key to the Clear button
 - **Twitch chat bot**: `!song` and `!songrequest` in your own channel, with viewer permissions and an on/off switch
 - **Song request list**: see every request in its own window and click one to open it in Spotify
-- **Now playing view** with cover art, progress bar and song history
+- **Now playing view** with cover art, seek bar, song history and synced lyrics (current line, via lrclib.net)
+- **Spotify volume sync** once your Spotify account is connected
 - **3 now-playing designs**: Spotify, Spotlight, Clean
-- **4 color themes**: Harbor, Nightfall, Moonlit, Steel, plus a custom wallpaper background
-- **System tray**: minimize to tray, single-instance, optional `--tray` start
-- **OBS overlays**: browser source for the current song (3 styles: Card, Minimal, Badge) and a separate one for song requests
+- **Colors and background**: 4 color themes (Harbor, Nightfall, Moonlit, Steel), your own accent and background colors, and a custom wallpaper with adjustable dimming and blur
+- **System tray**: minimize to tray, single-instance, optional `--tray` start, start with Windows
+- **OBS overlays**: browser source for the current song in 8 styles (Banner, Banner Pro, Card, Badge, Player Bar, Vinyl, Polaroid, Angelcore) and a separate one for song requests
+- **OBS song files**: optional `now_playing.txt` and `recent_songs.txt` for your own overlays
+- **Performance mode** for slower computers (no animations, wallpaper or lyrics)
 - **Always on top** option
+- **In-app updates**: check for new versions and install them from the app
 
 ## Antivirus warning (false positive)
 
 Some antivirus programs may flag `SpotifyController.exe` as a trojan (for example "Wacatac" or "Trojan.Python.Agent"). This is a **false positive**. It is a known issue with unsigned apps written in Python and packaged with PyInstaller, and with apps that use global hotkeys.
 
-- The app does not download or run other programs and collects no personal data. It only connects to Spotify, Twitch (if you enable the chat bot), cover art services and GitHub (version check).
-- You can check the file yourself on [VirusTotal] ([https://www.virustotal.com/gui/file/8666f1a3dc7e35113f196b5a787b41ec56321b6baffdc2ea9b5a9c6e45f5ee82]([https://www.virustotal.com/gui/file/ebe841c7fc671f556b5d1eda96e8545926fd56ce6f63523ba7db8265ccf63dc6?nocache=1](https://www.virustotal.com/gui/file/ea8016a3e20c91df8d9b54fb7acdf711a6ede23aba1882fbc5d87c8428c5b14b?nocache=1))). SHA256 hash: `ea8016a3e20c91df8d9b54fb7acdf711a6ede23aba1882fbc5d87c8428c5b14b`
+- The app does not run other programs and collects no personal data. It only connects to Spotify, Twitch (if you enable the chat bot), cover art services, lrclib.net (lyrics) and GitHub (version check and updates).
+- You can check the file yourself on [VirusTotal](https://www.virustotal.com/gui/file/ea8016a3e20c91df8d9b54fb7acdf711a6ede23aba1882fbc5d87c8428c5b14b). SHA256 hash: `ea8016a3e20c91df8d9b54fb7acdf711a6ede23aba1882fbc5d87c8428c5b14b`
 - To verify your download, run `Get-FileHash .\SpotifyController.exe -Algorithm SHA256` in PowerShell and compare the result with the hash above.
 - If your antivirus blocks it, add `SpotifyController.exe` to its exclusions list.
 - I have reported the file to the antivirus vendors as a false positive.
@@ -44,7 +48,7 @@ If you are not comfortable running it, please don't.
 2. Download `SpotifyController.exe` from the latest release.
 3. Run it. No installation needed.
 
-**Updating:** Open **Settings → About** and click **Check for updates**. If a new version is available, the app opens the download page in your browser.
+**Updating:** Open **Settings → About** and click **Check for updates** (or use the tray menu). If a new version is available, click **Update now** to download and install it. If the app cannot install it directly, it opens the download page instead.
 
 Start minimized to the tray:
 
@@ -54,14 +58,14 @@ SpotifyController.exe --tray
 
 ## Setup
 
-### Spotify (Like, playlists, song requests)
+### Spotify (Like, playlists, volume, song requests)
 
 1. Open the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and create an app.
 2. Add this Redirect URI: `http://127.0.0.1:8888/callback`
 3. Copy the **Client ID** (and secret if requested) into **Settings → Spotify** and connect your account.
 4. Assign keys to the Like and Add to Playlist actions in the **Hotkeys** tab.
 
-The app requests these Spotify permissions: `user-library-modify` (Like), `user-read-playback-state` and `user-modify-playback-state` (song requests / queue), `playlist-read-private`, `playlist-modify-private` and `playlist-modify-public` (Add to Playlist).
+The app requests these Spotify permissions: `user-library-modify` (Like), `user-read-playback-state` and `user-modify-playback-state` (song requests / queue, volume), `playlist-read-private`, `playlist-modify-private` and `playlist-modify-public` (Add to Playlist).
 
 If you update from an older version and a new feature does not work, disconnect and reconnect your Spotify account in **Settings → Spotify** so the new permissions are granted.
 
@@ -84,10 +88,10 @@ The bot only runs in your own channel, so there is no channel name to type and n
 
 ### OBS overlays
 
-1. Enable the overlay in **Settings → Stream**.
+1. Enable the overlay in **Settings → Stream** and pick a style.
 2. In OBS, add a **Browser Source** with one of these URLs (the port can be changed in the settings):
    - Now playing: `http://127.0.0.1:8787/overlay`
-   - Song requests: `http://127.0.0.1:8787/requests`
+   - Song requests: `http://127.0.0.1:8787/requests` (add `?n=5` to choose how many entries are shown, 1 to 10)
 
 You can use both next to each other.
 
@@ -101,7 +105,7 @@ Everything stays on your PC. The app creates these files next to the program (th
 | `hotkeys.json` | Your hotkey assignments |
 | `controller.json` | Your controller button assignments |
 | `history.json` | Recently played songs |
-| `cover_cache/` | Cached cover images |
+| `now_playing.txt`, `recent_songs.txt` | Only if "OBS song files" is enabled |
 | `*.log` | Error and debug logs |
 
 **Never share `settings.json`.** It contains your Spotify credentials and your Twitch login. When you give the program to someone else, only share `SpotifyController.exe`.
