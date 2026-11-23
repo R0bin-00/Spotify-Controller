@@ -4,6 +4,12 @@ A compact Windows desktop app for controlling Spotify with global hotkeys, a cle
 
 > **Windows only.** The app uses Windows APIs (media keys, media session, `winsound`), so it does not run on macOS or Linux.
 
+## Videos
+
+- **Showcase:** [Watch on YouTube](https://www.youtube.com/watch?v=LV511ti0lhU)
+- **Tutorial 1:** [Spotify Tab Setup (Like Hotkey, Playlist & Exact Matching)](https://www.youtube.com/watch?v=MhF1Db33KJY)
+- **Tutorial 2:** [Twitch Tab Setup (Chat Bot & Song Requests)](https://www.youtube.com/watch?v=nwztLMYJMHM)
+
 ## Features
 
 - **Global hotkeys** for Play/Pause, Next and Previous, freely configurable, work even when the window is hidden
@@ -60,6 +66,8 @@ SpotifyController.exe --tray
 
 ### Spotify (Like, playlists, volume, song requests)
 
+> 🎬 Prefer a video? Watch [Tutorial 1: Spotify Tab Setup (Like Hotkey, Playlist & Exact Matching)](https://www.youtube.com/watch?v=MhF1Db33KJY).
+
 1. Open the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and create an app.
 2. Add this Redirect URI: `http://127.0.0.1:8888/callback`
 3. Copy the **Client ID** (and secret if requested) into **Settings → Spotify** and connect your account.
@@ -70,6 +78,8 @@ The app requests these Spotify permissions: `user-library-modify` (Like), `user-
 If you update from an older version and a new feature does not work, disconnect and reconnect your Spotify account in **Settings → Spotify** so the new permissions are granted.
 
 ### Twitch chat bot
+
+> 🎬 Prefer a video? Watch [Tutorial 2: Twitch Tab Setup (Chat Bot & Song Requests)](https://www.youtube.com/watch?v=nwztLMYJMHM).
 
 1. Create an app at [dev.twitch.tv/console](https://dev.twitch.tv/console) with **Client Type: Public** and the OAuth redirect URL `http://localhost`.
 2. Paste the **Client ID** into **Settings → Twitch** and click **Log in with Twitch**.
@@ -116,4 +126,4 @@ This is an unofficial fan project. It is not affiliated with, endorsed by or spo
 
 ## License
 
-Copyright (c) 2026 angelbyte00. All rights reserved. See [LICENSE](LICENSE). 
+Copyright (c) 2026 angelbyte00. All rights reserved. See [LICENSE](LICENSE).
