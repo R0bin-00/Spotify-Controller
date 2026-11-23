@@ -6,9 +6,9 @@ A compact Windows desktop app for controlling Spotify with global hotkeys, a cle
 
 ## Videos
 
-- **Showcase:** [Watch on YouTube](https://www.youtube.com/watch?v=LV511ti0lhU)
-- **Tutorial 1:** [Spotify Tab Setup (Like Hotkey, Playlist & Exact Matching)](https://www.youtube.com/watch?v=MhF1Db33KJY)
-- **Tutorial 2:** [Twitch Tab Setup (Chat Bot & Song Requests)](https://www.youtube.com/watch?v=nwztLMYJMHM)
+-  [Showcase](https://www.youtube.com/watch?v=LV511ti0lhU)
+-  [Spotify Tab Setup (Like Hotkey, Playlist & Exact Matching)](https://www.youtube.com/watch?v=MhF1Db33KJY)
+-  [Twitch Tab Setup (Chat Bot & Song Requests)](https://www.youtube.com/watch?v=nwztLMYJMHM)
 
 ## Features
 
