@@ -116,4 +116,4 @@ This is an unofficial fan project. It is not affiliated with, endorsed by or spo
 
 ## License
 
-Copyright (c) 2026 angelbyte00. All rights reserved. See [LICENSE](LICENSE).
+Copyright (c) 2026 angelbyte00. All rights reserved. See [LICENSE](LICENSE). 
