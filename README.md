@@ -1,3 +1,8 @@
+<p align="center">
+   <img width="512" height="512" alt="icon" src="https://github.com/user-attachments/assets/02d30e3a-7251-4a1b-a8fa-0abb90165733" />
+
+
+
 # Spotify Controller
 
 A compact Windows desktop app for controlling Spotify with global hotkeys, a clean "now playing" view with synced lyrics, a system tray icon, a Twitch chat bot with song requests and OBS stream overlays.
